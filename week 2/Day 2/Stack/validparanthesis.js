@@ -27,3 +27,25 @@ function isEmpty(stack){
 
 const string1 = "(]{})"
 console.log(isValid(string1))
+
+//Simple Way:-
+var isValid = function(s) {
+    let stack=[];
+    
+    for(let char of s){
+        if(char==='(' || char==='{' || char ==='['){
+            stack.push(char)
+        }else{
+            if(
+                (char===')' && stack[stack.length-1]!=='(') ||
+                (char==='}' && stack[stack.length-1]!=='{') ||
+                (char===']' && stack[stack.length-1]!=='[') 
+                ){
+            return false
+            }
+            stack.pop()
+        }
+    }
+    return stack.length ===0;
+
+};
