@@ -1,3 +1,4 @@
+//Separate Chaining (Closed Hashing)
 class HashTable{
     constructor(size) {
         this.table = new Array(size)
